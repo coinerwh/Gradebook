@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i9mj1X9xQlLw/RmE91i/FoSRhuCsrWHxHZThl31QkwJy8bj9iWVgObsukFOj4H+wwedvQvHRfZI7DEB1nRis3g==",
+  "dgSpecHash": "yJmUjQmhrF8DrLelbQBvo6FtGeaBH0jolZGy7bg6mY/JIwI+GYbS3JfXHBRCCbTf0puqWxkwQ8RN8sDTPLfyoQ==",
   "success": true,
-  "projectFilePath": "/Users/williamcoiner/Projects/gradebook/test/Gradebook.Tests/Gradebook.Tests.csproj",
+  "projectFilePath": "/Users/williamcoiner/Projects/Gradebook/test/Gradebook.Tests/Gradebook.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/williamcoiner/.nuget/packages/coverlet.collector/1.2.0/coverlet.collector.1.2.0.nupkg.sha512",
     "/Users/williamcoiner/.nuget/packages/microsoft.codecoverage/16.5.0/microsoft.codecoverage.16.5.0.nupkg.sha512",
