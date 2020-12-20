@@ -15,11 +15,10 @@ namespace GradeBook.Tests
             book.AddGrade(67.5);
 
             // act
-            double average = book.AverageGrade();
-            double  high = book.HighGrade();
+            Statistics stats = book.Statistics();
 
             // assert
-            Assert.Equal(89.1, high);
+            Assert.Equal(89.1, stats.high);
         }
     }
 }

@@ -12,11 +12,9 @@ namespace GradeBook
             book.AddGrade(90.5);
             book.AddGrade(77.89);
 
-            double average = book.AverageGrade();
-            double high = book.HighGrade();
-            double low = book.LowestGrade();
+            Statistics stats = book.Statistics();
 
-            Console.WriteLine($"The average grade is {average}. The highest grade is {high}. The lowest grade is {low}");
+            Console.WriteLine($"The average grade is {stats.average}. The highest grade is {stats.high}. The lowest grade is {stats.low}");
         }
     }
 }
