@@ -8,13 +8,39 @@ namespace GradeBook
         static void Main(string[] args)
         {
             Book book = new Book("Wil's Gradebook");
-            book.AddGrade(89.1);
-            book.AddGrade(90.5);
-            book.AddGrade(77.89);
+
+            while(true)
+            {
+                System.Console.WriteLine("Please enter a grade or input 'q' to quit: ");
+                string input = Console.ReadLine();
+                if(input == "q")
+                {
+                    break;
+                }
+                try
+                {
+                    double grade = double.Parse(input);
+                    book.AddGrade(grade);
+                }
+                catch (ArgumentException ex)
+                {
+                    
+                    System.Console.WriteLine(ex.Message);
+                }
+                catch (FormatException ex)
+                {
+                    System.Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("**");
+                }
+            }
 
             Statistics stats = book.Statistics();
 
             Console.WriteLine($"The average grade is {stats.average}. The highest grade is {stats.high}. The lowest grade is {stats.low}");
+            System.Console.WriteLine($"The letter grade is {stats.Letter}");
         }
     }
 }
