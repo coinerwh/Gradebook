@@ -26,8 +26,8 @@ namespace GradeBook.Tests
         public void CheckAddGrade()
         {
             Book book = new Book("test");
-            book.AddGrade(100.5);
-            Assert.Equal(0, book.GetGrades().Count);
+            book.AddGrade(98.5);
+            Assert.Equal(1, book.GetGrades().Count);
         }
 
         [Fact]
