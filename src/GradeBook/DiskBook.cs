@@ -14,7 +14,23 @@ namespace GradeBook
 
         public override Statistics GetStatistics()
         {
-            throw new NotImplementedException();
+            Statistics stats = new Statistics();
+            List<double> grades = CreateGradeList();
+            stats.ComputeAverage(grades);
+            
+            return stats;
+        }
+
+        public List<double> CreateGradeList()
+        {
+            var gradeFile = File.ReadAllLines($"{Name}.txt");
+            List<double> grades = new List<double>();
+            foreach(string sGrade in gradeFile)
+            {
+                double grade = double.Parse(sGrade);
+                grades.Add(grade);
+            }
+            return grades;
         }
 
         public override void AddGrade(double grade)
@@ -22,10 +38,11 @@ namespace GradeBook
             using (StreamWriter w = File.AppendText($"{Name}.txt"))
             {
                 w.WriteLine(grade);
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
         }
-
     }
-
-    
 }

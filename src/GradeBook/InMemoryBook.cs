@@ -50,36 +50,7 @@ namespace GradeBook
         public override Statistics GetStatistics()
         {
             Statistics stats = new Statistics();
-            double sum = 0;
-            stats.low = double.MaxValue;
-            stats.high = double.MinValue;
-            foreach(double grade in this.grades)
-            {
-                sum += grade;
-                stats.low = Math.Min(stats.low, grade);
-                stats.high = Math.Max(stats.high, grade);
-            }
-            stats.average = sum / grades.Count;
-
-            switch(stats.average)
-            {
-                case double d when d >= 90.0:
-                    stats.Letter = 'A';
-                    break;
-                case double d when d >= 80.0:
-                    stats.Letter = 'B';
-                    break;
-                case double d when d >= 70.0:
-                    stats.Letter = 'C';
-                    break;
-                case double d when d >= 60.0:
-                    stats.Letter = 'D';
-                    break;
-                default:
-                    stats.Letter = 'F';
-                    break;
-                
-            }
+            stats.ComputeAverage(grades);
             return stats;
         }
 
