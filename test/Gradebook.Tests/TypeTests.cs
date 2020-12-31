@@ -71,41 +71,41 @@ namespace GradeBook.Tests
         [Fact]
         public void PassByReference()
         {
-           Book book1 = GetBook("Book 1");
+           InMemoryBook book1 = GetBook("Book 1");
            GetBookSetName(ref book1, "New name");
 
            Assert.Equal("New name", book1.Name);
         }
 
-        public void GetBookSetName(ref Book book, string name)
+        public void GetBookSetName(ref InMemoryBook book, string name)
         {
-            book = new Book(name);
+            book = new InMemoryBook(name);
         }
 
         [Fact]
         public void PassByValue()
         {
-           Book book1 = GetBook("Book 1");
+           InMemoryBook book1 = GetBook("Book 1");
            GetBookSetName(book1, "New name");
 
            Assert.Equal("Book 1", book1.Name);
         }
 
-        public void GetBookSetName(Book book, string name)
+        public void GetBookSetName(InMemoryBook book, string name)
         {
-            book = new Book(name);
+            book = new InMemoryBook(name);
         }
 
         [Fact]
         public void CanSetNameFromReference()
         {
-           Book book1 = GetBook("Book 1");
+           InMemoryBook book1 = GetBook("Book 1");
            setName(book1, "New name");
 
            Assert.Equal("New name", book1.Name);
         }
 
-        public void setName(Book book, string name)
+        public void setName(InMemoryBook book, string name)
         {
             book.Name = name;
         }
@@ -113,8 +113,8 @@ namespace GradeBook.Tests
         [Fact]
         public void UniqueObject()
         {
-           Book book1 = GetBook("Book 1");
-           Book book2 = GetBook("Book 2");
+           InMemoryBook book1 = GetBook("Book 1");
+           InMemoryBook book2 = GetBook("Book 2");
 
            Assert.Equal("Book 1", book1.Name);
            Assert.Equal("Book 2", book2.Name);
@@ -124,15 +124,15 @@ namespace GradeBook.Tests
         [Fact]
         public void TwoVariablesSameObject()
         {
-           Book book1 = GetBook("Book 1");
-           Book book2 = book1;
+           InMemoryBook book1 = GetBook("Book 1");
+           InMemoryBook book2 = book1;
 
            Assert.Same(book1, book2);
            Assert.True(Object.ReferenceEquals(book1, book2));
         }
-        Book GetBook(string name)
+        InMemoryBook GetBook(string name)
         {
-            return new Book(name);
+            return new InMemoryBook(name);
         }
     }
 }
