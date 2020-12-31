@@ -84,8 +84,5 @@ namespace GradeBook
         }
 
         private List<double> grades;
-
-        private string name;
-        readonly string category = "Science";
     }
 }

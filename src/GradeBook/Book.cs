@@ -1,5 +1,17 @@
 namespace GradeBook
 {
+    public class NamedObject
+    {
+        public NamedObject(string name)
+        {
+            Name = name;
+        }
+        public string Name 
+        {
+            get;
+            set;
+        }
+    }
     public interface IBook 
     {
         void AddGrade(double grade);
@@ -8,20 +20,17 @@ namespace GradeBook
         event GradeAddedDelegate GradeAdded;
 
     }
-    
+
     public abstract class Book : NamedObject, IBook
     {
         public Book(string name) : base(name)
         {
         }
 
-        public virtual event GradeAddedDelegate GradeAdded;
+        public abstract event GradeAddedDelegate GradeAdded;
 
         public abstract void AddGrade(double grade);
 
-        public virtual Statistics GetStatistics()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract Statistics GetStatistics();
     }
 }
