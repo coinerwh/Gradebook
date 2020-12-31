@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -12,11 +13,11 @@ namespace GradeBook
 
             EnterGrades(book);
 
-            Statistics stats = book.GetStatistics();
+            // Statistics stats = book.GetStatistics();
 
-            System.Console.WriteLine($"For the book named {book.Name}");
-            Console.WriteLine($"The average grade is {stats.average}. The highest grade is {stats.high}. The lowest grade is {stats.low}");
-            System.Console.WriteLine($"The letter grade is {stats.Letter}");
+            // System.Console.WriteLine($"For the book named {book.Name}");
+            // Console.WriteLine($"The average grade is {stats.average}. The highest grade is {stats.high}. The lowest grade is {stats.low}");
+            // System.Console.WriteLine($"The letter grade is {stats.Letter}");
         }
 
         private static void EnterGrades(IBook book)

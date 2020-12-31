@@ -12,6 +12,7 @@ namespace GradeBook
             set;
         }
     }
+    
     public interface IBook 
     {
         void AddGrade(double grade);

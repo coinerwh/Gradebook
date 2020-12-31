@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -18,7 +19,10 @@ namespace GradeBook
 
         public override void AddGrade(double grade)
         {
-            
+            using (StreamWriter w = File.AppendText($"{Name}.txt"))
+            {
+                w.WriteLine(grade);
+            }
         }
 
     }
